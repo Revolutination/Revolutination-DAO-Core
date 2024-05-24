@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "cmd": {
+    "command": "npx",
+    "args": ["vscode-langservers-extracted", "html-language-features", "--stdio"]
+  },
+  "filetypes": ["html"],
+  "settings": {
+    "html.format.enable": true,
+    "html.validate.enable": true
+  }
+}
