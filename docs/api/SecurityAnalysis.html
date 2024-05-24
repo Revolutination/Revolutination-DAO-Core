@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Analysis API</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#analyzeContract">analyzeContract</a></li>
+        <li><a href="#getAnalysisResult">getAnalysisResult</a></li>
+        <li><a href="#getSupportedAnalyzers">getSupportedAnalyzers</a></li>
+        <li><a href="#getAnalyzerConfig">getAnalyzerConfig</a></li>
+        <li><a href="#setAnalyzerConfig">setAnalyzerConfig</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="analyzeContract">
+      <h1>analyzeContract</h1>
+      <p>Analyzes a smart contract for security vulnerabilities.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>contractCode</code>: The source code of the smart contract.</li>
+        <li><code>analyzer</code>: The security analyzer to use.</li>
+        <li><code>config</code>: The configuration options for the analyzer.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>An <code>AnalysisResult</code> object indicating the analysis result.</p>
+      <h2>Example</h2>
+      <pre><code>const result = await SecurityAnalysis.analyzeContract('pragma solidity ^0.8.0; contract MyContract { ... }', 'my-analyzer', { timeout: 30000 });</code></pre>
+    </section>
+    <section id="getAnalysisResult">
+      <h1>getAnalysisResult</h1>
+      <p>Retrieves the analysis result for a previously analyzed contract.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>contractId</code>: The ID of the analyzed contract.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>An <code>AnalysisResult</code> object indicating the analysis result.</p>
+      <h2>Example</h2>
+      <pre><code>const result = await SecurityAnalysis.getAnalysisResult('my-contract-id');</code></pre>
+    </section>
+    <section id="getSupportedAnalyzers">
+      <h1>getSupportedAnalyzers</h1>
+      <p>Retrieves a list of supported security analyzers.</p>
+      <h2>Returns</h2>
+      <p>An array of strings representing the supported analyzers.</p>
+      <h2>Example</h2>
+      <pre><code>const analyzers = await SecurityAnalysis.getSupportedAnalyzers();</code></pre>
+    </section>
+    <section id="getAnalyzerConfig">
+      <h1>getAnalyzerConfig</h1>
+      <p>Retrieves the configuration options for a specific analyzer.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>analyzer</code>: The security analyzer to retrieve the configuration for.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>An object containing the configuration options for the analyzer.</p>
+      <h2>Example</h2>
+      <pre><code>const config = await SecurityAnalysis.getAnalyzerConfig('my-analyzer');</code></pre>
+    </section>
+    <section id="setAnalyzerConfig">
+      <h1>setAnalyzerConfig</h1>
+      <p>Sets the configuration options for a specific analyzer.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>analyzer</code>: The security analyzer to set the configuration for.</li>
+        <li><code>config</code>: The configuration options to set.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>A boolean indicating whether the configuration was successfully set.</p>
+      <h2>Example</h2>
+      <pre><code>const success = await SecurityAnalysis.setAnalyzerConfig('my-analyzer', { timeout: 30000 });</code></pre>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Security Analysis</p>
+  </footer>
+  <script src="../../scripts.js"></script>
+</body>
+</html>
