@@ -1,0 +1,223 @@
+<!-- FormalVerifier.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formal Verifier API</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#verifyContract">verifyContract</a></li>
+        <li><a href="#getVerificationResult">getVerificationResult</a></li>
+        <li><a href="#getSupportedLanguages">getSupportedLanguages</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="verifyContract">
+      <h1>verifyContract</h1>
+      <p>Verifies a smart contract using formal methods.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>contractCode</code>: The source code of the smart contract.</li>
+        <li><code>language</code>: The programming language of the smart contract.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>A <code>VerificationResult</code> object indicating the verification status.</p>
+      <h2>Example</h2>
+      <pre><code>const result = await FormalVerifier.verifyContract('pragma solidity ^0.8.0; contract MyContract { ... }', 'solidity');</code></pre>
+    </section>
+    <section id="getVerificationResult">
+      <h1>getVerificationResult</h1>
+      <p>Retrieves the verification result for a previously verified contract.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>contractId</code>: The ID of the verified contract.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>A <code>VerificationResult</code> object indicating the verification status.</p>
+      <h2>Example</h2>
+      <pre><code>const result = await FormalVerifier.getVerificationResult('my-contract-id');</code></pre>
+    </section>
+    <section id="getSupportedLanguages">
+      <h1>getSupportedLanguages</h1>
+      <p>Retrieves a list of supported programming languages for formal verification.</p>
+      <h2>Returns</h2>
+      <p>An array of strings representing the supported languages.</p>
+      <h2>Example</h2>
+      <pre><code>const languages = await FormalVerifier.getSupportedLanguages();</code></pre>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Formal Verifier</p>
+  </footer>
+  <script src="../../scripts.js"></script>
+</body>
+</html>
+
+<!-- SecurityAnalysis.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Analysis API</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#analyzeContract">analyzeContract</a></li>
+        <li><a href="#getAnalysisResult">getAnalysisResult</a></li>
+        <li><a href="#getSupportedAnalyzers">getSupportedAnalyzers</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="analyzeContract">
+      <h1>analyzeContract</h1>
+      <p>Analyzes a smart contract for security vulnerabilities.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>contractCode</code>: The source code of the smart contract.</li>
+        <li><code>analyzer</code>: The security analyzer to use.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>An <code>AnalysisResult</code> object indicating the analysis result.</p>
+      <h2>Example</h2>
+      <pre><code>const result = await SecurityAnalysis.analyzeContract('pragma solidity ^0.8.0; contract MyContract { ... }', 'my-analyzer');</code></pre>
+    </section>
+    <section id="getAnalysisResult">
+      <h1>getAnalysisResult</h1>
+      <p>Retrieves the analysis result for a previously analyzed contract.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>contractId</code>: The ID of the analyzed contract.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>An <code>AnalysisResult</code> object indicating the analysis result.</p>
+      <h2>Example</h2>
+      <pre><code>const result = await SecurityAnalysis.getAnalysisResult('my-contract-id');</code></pre>
+    </section>
+    <section id="getSupportedAnalyzers">
+      <h1>getSupportedAnalyzers</h1>
+      <p>Retrieves a list of supported security analyzers.</p>
+      <h2>Returns</h2>
+      <p>An array of strings representing the supported analyzers.</p>
+      <h2>Example</h2>
+      <pre><code>const analyzers = await SecurityAnalysis.getSupportedAnalyzers();</code></pre>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Security Analysis</p>
+  </footer>
+  <script src="../../scripts.js"></script>
+</body>
+</html>
+
+<!-- Vyper API -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vyper API</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#compile">compile</a></li>
+        <li><a href="#getCompilationResult">getCompilationResult</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="compile">
+      <h1>compile</h1>
+      <p>Compiles a Vyper smart contract.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>contractCode</code>: The source code of the smart contract.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>A <code>CompilationResult</code> object indicating the compilation status.</p>
+      <h2>Example</h2>
+      <pre><code>const result = await VyperCompiler.compile('contract MyContract: ...');</code></pre>
+    </section>
+    <section id="getCompilationResult">
+      <h1>getCompilationResult</h1>
+      <p>Retrieves the compilation result for a previously compiled contract.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>contractId</code>: The ID of the compiled contract.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>A <code>CompilationResult</code> object indicating the compilation status.</p>
+      <h2>Example</h2>
+      <pre><code>const result = await VyperCompiler.getCompilationResult('my-contract-id');</code></pre>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Vyper</p>
+  </footer>
+  <script src="../../scripts.js"></script>
+</body>
+</html>
+
+<!-- Remix API -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remix API</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#analyzeContract">analyzeContract</a></li>
+        <li><a href="#getAnalysisResult">getAnalysisResult</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="analyzeContract">
+      <h1>analyzeContract</h1>
+      <p>Analyzes a smart contract for security vulnerabilities using Remix.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>contractCode</code>: The source code of the smart contract.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>An <code>AnalysisResult</code> object indicating the analysis result.</p>
+      <h2>Example</h2>
+      <pre><code>const result = await RemixAnalyzer.analyzeContract('pragma solidity ^0.8.0; contract MyContract { ... }');</code></pre>
+    </section>
+    <section id="getAnalysisResult">
+      <h1>getAnalysisResult</h1>
+      <p>Retrieves the analysis result for a previously analyzed contract.</p>
+      <h2>Parameters</h2>
+      <ul>
+        <li><code>contractId</code>: The ID of the analyzed contract.</li>
+      </ul>
+      <h2>Returns</h2>
+      <p>An <code>AnalysisResult</code> object indicating the analysis result.</p>
+      <h2>Example</h2>
+      <pre><code>const result = await RemixAnalyzer.getAnalysisResult('my-contract-id');</code></pre>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Remix</p>
+  </footer>
+  <script src="../../scripts.js"></script>
+</body>
+</html>
