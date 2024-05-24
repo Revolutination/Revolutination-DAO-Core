@@ -1,0 +1,29 @@
+{
+  "host": "api.example.com",
+  "port": 8080,
+  "rateLimit": {
+    "maxRequests": 100,
+    "timeWindow": "1m"
+  },
+  "auth": {
+    "jwtSecret": "superSecretKey",
+    "jwtExpiration": "1h"
+  },
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "username": "api_user",
+    "password": "api_password",
+    "database": "api_db"
+  },
+  "services": {
+    "userService": {
+      "url": "http://user-service:8081",
+      "timeout": 5000
+    },
+    "paymentService": {
+      "url": "http://payment-service:8082",
+      "timeout": 5000
+    }
+  }
+}
